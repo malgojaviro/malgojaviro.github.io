@@ -1,18 +1,21 @@
+@font-face {
+    font-family: Roobert;
+    src: url(Roobert-Medium.woff2);
+}
+
 body {
     max-width: 580px;
     padding: 1em;
     font-size: 16px;
     line-height: 1.3;
-    font-family: sans-serif;
+    font-family: Roobert, sans-serif;
     background-color: #d2d2d2;
     -webkit-font-smoothing: antialiased;
 }
 
 h2 {
-    font-family: serif;
     font-size: 1.1em;
     font-weight: normal;
-    font-style: italic;
     margin-bottom: 0.2em;
 }
 
@@ -27,8 +30,6 @@ ul {
 
 a, a:link, a:active, a:visited {
     color: #000;
-    font-family: serif;
-    font-style: italic;
     font-size: 1.1em;
     text-decoration: underline;
 }
