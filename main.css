@@ -44,7 +44,7 @@ header {
     max-width: 920px;
     color: var(--mid);
     letter-spacing: -0.02em;
-    margin-bottom: 0.8em;
+    margin-bottom: 0.4em;
     flex-shrink: 2;
     
 }
@@ -61,6 +61,18 @@ nav {
     align-items: center;
     justify-content: center;
     transform: rotate(-15deg);
+    opacity: 0;
+    animation: wiggle cubic-bezier(.07,1.37,.26,.99) 1.6s 1 normal forwards;
+}
+
+@keyframes wiggle {
+    from {
+        transform: translateX(150%) rotate(160deg) ;
+    }
+    to {
+        transform: translateX(0%) rotate(-12deg) ;
+        opacity: 1;
+    }
 }
 
 nav ul {
@@ -102,7 +114,10 @@ ul.right {
 }
 
 .places li {
+    margin-left: 6.1em;
+    margin-bottom: 0.2em;
     color: var(--mid);
+    text-indent: -6.1em;
 }
 
 .places li:first-child {
@@ -115,28 +130,34 @@ ul.right {
 
 a, a:hover, a:link, a:active, a:visited {
     color: inherit;
-    transition: ease 0.3s;
     text-decoration: underline;
     text-decoration-thickness: 1.5px;
     text-underline-offset: 0.1em;
 }
 
 a:hover {
+    animation: 1.4s normal infinite colorwheel;
+}
 
-    animation: 2s normal infinite colorwheel;
+nav a, nav a:hover, nav a:link, nav a:active, nav a:visited {
+    text-decoration: none;
+}
+
+nav a:hover {
+    animation: 1.4s normal infinite colorwheel;
 }
 
 @keyframes colorwheel {
-    from {
-        text-decoration-color: #0179F8;
-    }
-    50% {
-        text-decoration-color: #01F4C6;
-    }
-    to {
-        text-decoration-color: #0179F8;
-    }
+ from {
+      color: #0179F8;
+ }
+  50% {
+     color: #01F4C6;
   }
+  to {
+      color: #0179F8;
+ }
+}
 
 section {
     margin-bottom: min(75px, 8vh);
@@ -149,7 +170,7 @@ section {
 .showcase {
     width: calc(100%);
     height: calc((100vw - 2em - 15px) / 2.3);
-    min-height: 400px;
+    min-height: 500px;
     border-radius: 36px;
     background: radial-gradient(107.48% 115.12% at 64.5% 96.35%, rgba(113, 221, 255, 0.1449) 0%, rgba(113, 229, 255, 0) 100%), #F2F0EC;
     overflow: clip;
