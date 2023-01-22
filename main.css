@@ -62,7 +62,7 @@ nav {
     justify-content: center;
     transform: rotate(-15deg);
     opacity: 0;
-    animation: wiggle cubic-bezier(.07,1.37,.26,.99) 1.6s 1 normal forwards;
+    animation: wiggle cubic-bezier(.07,1.37,.26,.99) 1.8s 1 normal forwards;
 }
 
 @keyframes wiggle {
