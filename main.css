@@ -25,7 +25,9 @@ body {
     -webkit-font-smoothing: antialiased;
     letter-spacing: -0.015em;
     color: var(--fg);
-    
+    min-width: calc(375px - 1em - 1em);
+    max-width: 1800px;
+    margin: 0 auto;
 }
 
 body {
@@ -62,6 +64,7 @@ nav {
     justify-content: center;
     transform: rotate(-15deg);
     opacity: 0;
+    z-index: 10;
     animation: wiggle cubic-bezier(.07,1.37,.26,.99) 1.8s 1 normal forwards;
 }
 
@@ -168,19 +171,84 @@ section {
 }
 
 .showcase {
+    position: relative;
     width: calc(100%);
-    height: calc((100vw - 2em - 15px) / 2.3);
-    min-height: 500px;
+    height: 620px;
     border-radius: 36px;
     background: radial-gradient(107.48% 115.12% at 64.5% 96.35%, rgba(113, 221, 255, 0.1449) 0%, rgba(113, 229, 255, 0) 100%), #F2F0EC;
     overflow: clip;
+}
+
+.showcase * {
+    position: absolute;
+    transition: 1s ease;
+}
+
+.center-wrapper {
+    transform-origin: top left;
+    left: 50%;
+}
+
+.shadow {
+    border: 0.5px solid rgba(48, 49, 50, 0.26);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04), 0px 6px 40px rgba(0, 0, 0, 0.1);
+}
+
+.showcase.uploader * {
+    border-radius: 12px;
+}
+
+.uploader .center-wrapper {
+    top: 92%;
+}
+
+.uploader:hover .center-wrapper {
+    top: 26%;
+}
+
+.uploader:hover .center-wrapper img {
+    transform: translateY(0px);
+}
+
+.uploader-menu {
+    left: -213px;
+    top: -496px;
+}
+
+.uploader-floating {
+    left: -432px;
+    top: 29px;
+    transform: translateY(40px);
+}
+
+.uploader-panel {
+    left: -432px;
+    top: 126px;
+    transform: translateY(80px);
+}
+
+.uploader-camera {
+    left: 16px;
+    top: 80px;
+    transform: translateY(50px);
+}
+
+.uploader-palmas {
+    left: -657px;
+    top: -107px;
+    transform: translateY(160px);
+}
+
+.uploader-typewriter {
+    left: 296px;
+    top: -107px;
+    transform: translateY(200px);
 }
 
 .now {
     letter-spacing: 0.06em;
     font-size: 0.97em;
 }
-
 
 @media only screen and (max-width: 1160px)  {
     body {
@@ -204,5 +272,49 @@ section {
 
     main {
         margin-top: min(100px, 10vh);
+    }
+}
+
+@media only screen and (max-width: 920px)  {
+    .center-wrapper {
+        transform: scale(0.8);
+    }
+}
+
+@media only screen and (max-width: 740px)  {
+    .center-wrapper {
+        transform: scale(0.7);
+    }
+
+    .uploader-menu {
+        left: -214px;
+        top: -510px;
+        transform: translateY(-100px);
+    }
+    
+    .uploader-floating {
+        left: 260px;
+        top: 200px;
+    }
+    
+    .uploader-panel {
+        left: -202px;
+        top: 360px;
+    }
+    
+    .uploader-camera {
+        left: -560px;
+        top: 10px;
+        transform: translateY(100px);
+    }
+    
+    .uploader-palmas {
+        left: 0px;
+        top: -200px;
+        transform: translateY(300px);
+    }
+    
+    .uploader-typewriter {
+        display: none;
     }
 }
